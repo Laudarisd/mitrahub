@@ -1,0 +1,78 @@
+/* MitraHub site styles. Brand colours: crimson and navy, on white. */
+:root{--bg:#fff;--soft:#f6f7fa;--text:#20242a;--muted:#5b6470;--line:#e5e7eb;--crimson:#c92a36;--navy:#234b83;--card:#fff;--radius:16px}
+@media (prefers-color-scheme:dark){:root{--bg:#14161a;--soft:#1c1f24;--text:#edeff2;--muted:#aab1bb;--line:#30353d;--crimson:#f0626c;--navy:#7fa6dd;--card:#1c1f24}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Noto Sans KR","Noto Sans Devanagari",sans-serif}
+img{max-width:100%;height:auto}
+a{color:inherit}
+.wrap{width:100%;max-width:1040px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:var(--bg);padding:8px 12px;border-radius:8px;z-index:10}
+:focus-visible{outline:3px solid var(--navy);outline-offset:3px;border-radius:6px}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font:italic 700 22px/1 Georgia,"Times New Roman",serif}
+.brand b{color:var(--crimson);font-weight:700}.brand i{color:var(--navy)}
+.brand.small{font-size:18px}
+.site-header nav{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:15px}
+.site-header nav a{text-decoration:none;color:var(--muted);padding:6px 0;border-bottom:2px solid transparent}
+.site-header nav a:hover,.site-header nav a[aria-current=page]{color:var(--text);border-color:var(--crimson)}
+
+/* Hero */
+.hero{background:radial-gradient(900px 420px at 15% -10%,color-mix(in srgb,var(--crimson) 14%,transparent),transparent 70%),radial-gradient(900px 420px at 90% 0%,color-mix(in srgb,var(--navy) 16%,transparent),transparent 70%),var(--soft);border-bottom:1px solid var(--line)}
+.hero-in{text-align:center;padding-top:64px;padding-bottom:72px}
+.hero-logo{width:132px;height:132px;background:#fff;border-radius:32px;padding:14px;box-shadow:0 12px 40px rgba(20,30,60,.14)}
+.hero h1{margin:22px 0 4px;font:italic 700 clamp(44px,8vw,68px)/1.05 Georgia,"Times New Roman",serif;letter-spacing:.2px}
+.hero h1 b{color:var(--crimson);font-weight:700}.hero h1 i{color:var(--navy)}
+.tagline{margin:0;font-size:clamp(18px,2.6vw,22px);letter-spacing:.6px;color:var(--muted)}
+.hero-text{max-width:620px;margin:20px auto 0;font-size:18px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:28px}
+.store,.ghost{display:inline-flex;align-items:center;min-height:52px;padding:0 24px;border-radius:14px;font-weight:600;text-decoration:none}
+.store{background:var(--navy);color:#fff}
+@media (prefers-color-scheme:dark){.store{color:#0f1420}}
+.store b{margin-left:.35em}
+.ghost{border:1.5px solid var(--line);background:var(--bg)}
+.ghost:hover{border-color:var(--navy)}
+.chips{list-style:none;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:26px 0 0;padding:0}
+.chips li{font-size:14px;color:var(--muted);border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:5px 14px}
+
+/* Sections */
+.section{padding-top:64px;padding-bottom:64px}
+.section h2{margin:0 0 8px;font-size:clamp(26px,4vw,34px);line-height:1.2}
+.section-lede{margin:0 0 32px;color:var(--muted);font-size:18px;max-width:640px}
+.center{text-align:center}.center .section-lede{margin-left:auto;margin-right:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.card svg{width:44px;height:44px;padding:9px;border-radius:12px;background:color-mix(in srgb,var(--crimson) 12%,transparent);fill:none;stroke:var(--crimson);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.card:nth-child(even) svg{background:color-mix(in srgb,var(--navy) 14%,transparent);stroke:var(--navy)}
+.card h3{margin:16px 0 6px;font-size:19px}
+.card p{margin:0;color:var(--muted)}
+.band{background:var(--soft);border-block:1px solid var(--line)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:48px}
+.ticks{list-style:none;padding:0;margin:0 0 16px}
+.ticks li{position:relative;padding:6px 0 6px 30px}
+.ticks li::before{content:"";position:absolute;left:4px;top:13px;width:12px;height:7px;border-left:2.5px solid var(--navy);border-bottom:2.5px solid var(--navy);transform:rotate(-45deg)}
+.link{color:var(--navy);font-weight:600;text-underline-offset:3px}
+
+/* Documents (privacy, terms, delete account) */
+.doc{max-width:760px;padding-top:56px;padding-bottom:72px}
+.eyebrow{margin:0;color:var(--crimson);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;font-size:13px}
+.doc h1{margin:6px 0 4px;font-size:clamp(30px,5vw,42px);line-height:1.15}
+.updated{margin:0 0 20px;color:var(--muted);font-size:15px}
+.lede{font-size:18px;color:var(--muted);padding-bottom:24px;border-bottom:1px solid var(--line)}
+.doc h2{margin:40px 0 8px;font-size:22px;line-height:1.3;scroll-margin-top:84px}
+.doc p,.doc li{font-size:17px}
+.doc ul{padding-left:22px}.doc li{margin:6px 0}
+.doc a{color:var(--navy);text-underline-offset:3px}
+.note{margin-top:40px;padding:16px 18px;border:1px solid var(--line);border-radius:12px;background:var(--soft)}
+
+/* Footer */
+.site-footer{border-top:1px solid var(--line);background:var(--soft)}
+.foot{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;padding-top:28px;padding-bottom:28px}
+.site-footer nav{display:flex;flex-wrap:wrap;gap:6px 20px;font-size:15px}
+.site-footer nav a{color:var(--muted);text-decoration:none}.site-footer nav a:hover{color:var(--text);text-decoration:underline}
+.fine{margin:0 0 0 auto;color:var(--muted);font-size:14px}
+@media (max-width:640px){.bar{flex-direction:column;align-items:flex-start;padding-top:10px;padding-bottom:10px}.hero-in{padding-top:44px;padding-bottom:52px}.fine{margin-left:0;width:100%}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
